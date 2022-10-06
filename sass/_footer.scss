@@ -1,0 +1,109 @@
+/* ====================================
+media query
+==================================== */
+$breakpoints: (
+    "sm": "(max-width: 767px)",
+    "md":  "(min-width: 768px)",
+) !default;
+
+// メディアクエリー
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+/* ====================================
+colors
+==================================== */
+$primary-color: #00a381;
+$font-color: #333;
+
+/* ==================================
+footer
+================================== */
+.footer {
+    background: #F7F7F7;
+    padding: 42px 40px 12px;
+    @include mq(sm) {
+        padding: 36px 0 14px;
+    }
+}
+
+.footer__logo {
+    width: 120px;
+    margin: 0 auto;
+}
+
+.footer__nav-list {
+    margin-top: 8px;
+    @include mq(md) {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+    }
+    @include mq(sm) {
+        text-align: center;
+    }
+}
+
+.footer__nav-item {
+    & + & {
+        @include mq(md) {
+            margin-left: 30px;
+        }
+    }
+}
+
+.footer__nav-item-link {
+    font-size: 12px;
+    color: $font-color;
+    display: block;
+    padding: 1em 0; // クリック領域を確保
+
+    &:hover {
+        transition: opacity .4s;
+        opacity: 0.7;
+    }
+
+    @include mq(sm) {
+        padding: 0.3em 0;
+    }
+}
+
+.footer__sns-list {
+    text-align: center;
+    @include mq(sm) {
+        margin-top: 14px;
+    }
+}
+
+.footer__sns-item {
+    display: inline-block;
+
+    & + & {
+        margin-left: 10px;
+    }
+}
+
+.footer__sns-item-link {
+    color: $primary-color;
+    font-size: 24px; // 大体
+    display: block;
+    padding: 0.1em 0.5em;
+
+    &:hover {
+        transition: opacity .4s;
+        opacity: 0.7;
+    }
+}
+
+.footer__copyright {
+    color: #888;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+    @include mq(sm) {
+        margin-top: 5px;
+    }
+}

@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+// 各cssの読み込み
+@use "header";
+@use "top";
+@use "about";
+@use "bg-concept";
+
+
+
+/* ====================================
+media query
+==================================== */
+$breakpoints: (
+    "sm": "(max-width: 767px)",
+    "md":  "(min-width: 768px)",
+) !default;
+
+// メディアクエリー
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+/* ====================================
+colors
+==================================== */
+$primary-color: #00a381;
+$font-color: #333;
+
+/* ====================================
+common
+==================================== */
+// スマホ時のみ表示
+@include mq("sm") {
+    .is-pc {
+        display: none;
+    }
+}
+// PC時のみ表示
+@include mq("md") {
+    .is-sp {
+        display: none;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    font-family: "ヒラギノ明朝 ProN", serif, Helvetica, Arial;
+    font-size: 16px;
+    line-height: 1.6875;
+    background: #fff;
+    color: #3F3A40;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+// 親要素の継承
+a {
+    color: inherit;
+}
+
+.inner {
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: content-box;
+    @include mq("sm") {
+        padding: 0 15px;
+        max-width: 1200px;
+    }
+}
+
+/* ====================================
+main
+==================================== */
+.main {
+    padding-top: 70px;
+    @include mq("sm") {
+        padding-top: 60px;
+    }
+}

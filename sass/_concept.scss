@@ -1,0 +1,62 @@
+/* ====================================
+media query
+==================================== */
+$breakpoints: (
+    "sm": "(max-width: 767px)",
+    "md":  "(min-width: 768px)",
+) !default;
+
+// メディアクエリー
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+/* ====================================
+colors
+==================================== */
+$primary-color: #00a381;
+$font-color: #333;
+
+/* ==================================
+concept
+================================== */
+.concept__inner {
+    margin-top: 64px;
+    @include mq(md) {
+        display: flex;
+        align-items: center;
+    }
+    @include mq(sm) {
+        margin-top: 46px;
+    }
+}
+
+.concept__picture {
+    @include mq(md) {
+        flex: 0 0 50%;
+    }
+}
+
+.concept__message {
+    @include mq(md) {
+        flex: 0 1 50%;
+        margin-left: 6.667%;
+    }
+    @include mq(sm) {
+        margin-top: 35px;
+    }
+}
+
+.concept__title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.concept__text {
+    margin-top: 36px;
+    @include mq(sm) {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,236 @@
+/* ====================================
+media query
+==================================== */
+$breakpoints: (
+    "sm": "(max-width: 767px)",
+    "md":  "(min-width: 768px)",
+) !default;
+
+// メディアクエリー
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+/* ====================================
+colors
+==================================== */
+$primary-color: #00a381;
+$font-color: #333;
+
+/* ==================================
+contact
+================================== */
+.contact {
+    background: rgba(200, 213, 187, 0.3);
+    margin-top: 225px;
+    padding: 72px 40px 86px;
+
+    @include mq(sm) {
+        margin-top: 92px;
+        padding: 56px 28px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        border: 0;
+        font-size: 16px;
+        padding: .2em .5em;
+        border-radius: 2px;
+        box-shadow: 5px 6px 16px rgba(96,96,96,0.16);
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        height: 40px;
+    }
+
+    textarea {
+        min-height: 122px;
+        resize: vertical;
+    }
+}
+
+.contact__form {
+    margin-top: 56px;
+    @include mq(sm) {
+        margin-top: 26px;
+    }
+}
+
+.contact__text {
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.contact__inline {
+    font-size: 16px;
+    color: #E7728E;
+}
+
+.contact__items {
+    max-width: 510px;
+    margin: 18px auto 0;
+}
+
+.contact__item {
+    @include mq(md) {
+        display: flex;
+    }
+
+    & + & {
+        margin-top: 32px;
+    }
+}
+
+.contact__title {
+    background: $primary-color;
+    color: #fff;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding-left: 10px;
+    position: relative;
+    flex: 0 1 100%;
+
+    @include mq("sm") {
+        display: inline-block;
+        font-size: 14px;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 16px;
+    }
+}
+
+.contact__title::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    right: -8px;
+    border-style: solid;
+    border-width: 20px 0 20px 8px;
+    border-color: transparent transparent transparent $primary-color;
+}
+
+.contact__required {
+    font-size: 12px;
+    color: #E7728E;
+    vertical-align: super;
+    line-height: 1;
+    @include mq(sm) {
+        font-size: 10px;
+    }
+}
+
+.contact__input {
+    flex: 0 0 320px;
+    margin-left: 18px;
+    @include mq("sm") {
+        margin-top: 3px;
+    }
+}
+
+.contact__wrap {
+    display: inline-flex;
+    border: solid 1px #fff;
+    border-radius: 1px;
+    box-shadow: 5px 6px 16px rgba(96,96,96,0.16);
+}
+
+.contact__radio {
+    display: flex;
+}
+
+.contact__radio--input {
+    display: none;
+}
+
+label {
+    background-color: #fff;
+    color: $primary-color;
+    height: 38px;
+    line-height: 38px;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .4s, color .4s;
+}
+
+.contact__radio--input:checked + label {
+    background-color: $primary-color;
+    color: #fff;
+    border-radius: 1px;
+}
+
+.contact__footer {
+    text-align: center;
+}
+
+.contact__footer {
+    margin-top: 20px;
+    @include mq(sm) {
+        margin-top: 14px;
+    }
+}
+
+.contact__privacy {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+.contact__privacy--input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    &:checked + .contact__privacy--part {
+        width: 10px;
+        border-top: 0;
+        border-left: 0;
+        background-color: transparent;
+        transform: rotate(45deg);
+        top: -5px;
+        left: 5px;
+    }
+    &:focus + .contact__privacy--part {
+        outline: -webkit-focus-ring-color auto 5px;
+    }
+    &:checked:focus + .contact__privacy--part {
+        outline: none;
+    }
+}
+
+.contact__privacy--part {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border: solid 1px $primary-color;
+    background: #fff;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: all .2s;
+}
+
+.contact__privacy--link {
+    color: $primary-color;
+    text-decoration: underline;
+}
+
+.contact__submit {
+    margin-top: 46px;
+    @include mq(sm) {
+        margin-top: 24px;
+    }
+}

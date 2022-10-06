@@ -5,6 +5,8 @@
 @use "top";
 @use "about";
 @use "bg-concept";
+@use "products";
+@use "news";
 
 
 
@@ -50,7 +52,6 @@ common
 *::after {
     box-sizing: border-box;
 }
-
 
 html,
 body {
@@ -103,5 +104,33 @@ main
     padding-top: 70px;
     @include mq("sm") {
         padding-top: 60px;
+    }
+}
+
+.section-title {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #3F3A40;
+    @include mq(sm) {
+        font-size: 20px;
+    }
+}
+
+.section-title p {
+    font-family: 'Bangers', cursive;
+    font-size: 40px;
+    color: #F4D6A5;
+    position: absolute;
+    content: "";
+    top: 24%;
+    left: 50%;
+    opacity: 0.5;
+    @include mq(sm) {
+        font-size: 20px;
     }
 }

@@ -23,79 +23,83 @@ $font-color: #333;
 products
 ================================== */
 .products {
-    max-width: 940px;
+    background: #E8E8E8;
+    padding: 160px 100px;
     @include mq("sm") {
-        max-width: 340px;
-        padding: 0 58px !important;
+        padding: 120px 0 60px;
     }
 }
 
 .products__items {
-    margin-top: 64px;
-    display: flex;
-    justify-content: space-between;
+    max-width: 1080px;
+    margin: 52px auto 0;
     @include mq("sm") {
+        max-width: 335px;
         margin-top: 48px;
         display: block;
     }
 }
 
 .products__item {
-        flex: 0 0 27.6%;
-}
-
-.products__item + .products__item {
-    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    box-shadow: 3px 3px 6px #00000029;
     @include mq("sm") {
-        margin-top: 48px;
+        display: block;
+        padding: 20px;
     }
 }
 
-.products__link {
-    display: block;
-    color: $font-color;
-    font-size: 14px;
+.products__item:nth-child(even) {
+    flex-direction: row-reverse;
 }
 
-.products__link:hover {
-    .products__picture > img {
-        transform: scale(1.05);
+.products__item + .products__item {
+    margin-top: 100px;
+    @include mq("sm") {
+        margin-top: 46px;
     }
 }
 
 .products__picture {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-.products__picture::before {
-    content:"";
-    display: block;
-    padding-top: 66.5384%;
-}
-
-.products__picture > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    @include mq("sm") {
+        width: 100%;
+    }
 }
 
 .products__body {
-    margin-top: 22px;
-}
-
-.products__cost {
-    color: #989898;
-    margin-top: 10px;
-}
-
-.products__footer {
-    text-align: center;
-    margin-top: 44px;
-    @include mq(sm) {
-        margin-top: 42px;
+    width: 50%;
+    background: #fff;
+    padding: 35px 40px;
+    @include mq("sm") {
+        width: 100%;
+        padding: 20px 0 0 0;
     }
+}
+
+.products__body h3 {
+    font-size: 24px;
+    line-height: calc(41 / 24);
+}
+
+.products__circle {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.products__circle p {
+    font-size: 10px;
+}
+
+.products__circle p:not(:first-child) {
+    margin-left: 8px;
+}
+
+.products__text {
+    margin-top: 34px;
+    font-size: 16px;
+    line-height: calc(28 / 16);
 }

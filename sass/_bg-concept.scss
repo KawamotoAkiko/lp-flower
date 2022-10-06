@@ -35,6 +35,24 @@ about
     color: #fff;
     font-size: 32px;
     font-weight: bold;
+    line-height: calc(62 / 32);
     top: 50%;
     left: 100px;
+    @include mq("sm") {
+        font-size: 18px;
+        line-height: calc(48 / 18);
+        width: max-content;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.bg {
+    width: 100%;
+    height: 260px;
+    background: url(../img/background.png) no-repeat center / cover;
+    @include mq("sm") {
+        height: 140px;
+    }
 }

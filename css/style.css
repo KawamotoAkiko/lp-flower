@@ -357,136 +357,21 @@ colors
 /* ==================================
 about
 ================================== */
-.about {
-  padding-bottom: 300px;
-}
-
-.about__inner {
+.bg-concept {
   width: 100%;
-  max-width: 1150px;
-  margin: 0 auto;
-}
-
-@media (min-width: 767px) and (max-width: 1150px) {
-  .about__inner {
-    padding: 0 20px;
-  }
-}
-.about__wrap {
-  display: flex;
-}
-@media (max-width: 767px) {
-  .about__wrap {
-    display: block;
-  }
-}
-
-@media (max-width: 1149px) {
-  .about__wrap {
-    display: block;
-  }
-}
-.about__content {
-  margin-top: 60px;
-  margin-left: auto;
-  width: 35%;
-}
-
-@media (max-width: 1149px) {
-  .about__content {
-    width: 100%;
-  }
-}
-.about__title {
+  height: 600px;
+  background: url(../img/concept.png) no-repeat center/cover;
   position: relative;
 }
 
-.about__title h2 {
-  font-size: 22px;
-  font-weight: bold;
-  color: #3F3A40;
-}
-@media (max-width: 767px) {
-  .about__title h2 {
-    font-size: 20px;
-  }
-}
-
-.about__title p {
-  font-family: "Bangers", cursive;
-  font-size: 30px;
-  color: #F4D6A5;
+.bg-concept h2 {
   position: absolute;
   content: "";
-  top: -2%;
-  left: 36%;
-  opacity: 0.5;
-}
-@media (max-width: 767px) {
-  .about__title p {
-    font-size: 20px;
-  }
-}
-
-.about__text {
-  margin-top: 28px;
-  color: #3F3A40;
-}
-@media (max-width: 767px) {
-  .about__text {
-    font-size: 14px;
-    margin-top: 22px;
-    line-height: 1.17143;
-  }
-}
-
-.about__icon {
-  width: 150px;
-}
-
-.about__icon.is-pc {
-  display: block;
-}
-@media (max-width: 767px) {
-  .about__icon.is-pc {
-    display: none;
-  }
-}
-
-.about__icon.is-sp {
-  display: block;
-}
-@media (min-width: 768px) {
-  .about__icon.is-sp {
-    display: none;
-  }
-}
-
-.about__pictures {
-  position: relative;
-  margin-left: 20px;
-  width: 65%;
-}
-
-@media (max-width: 1149px) {
-  .about__pictures {
-    width: 100%;
-  }
-}
-.about__bgPic {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  max-width: 500px;
-}
-
-.about__mainPic {
-  position: absolute;
-  top: 15%;
-  right: 7%;
-  width: 100%;
-  max-width: 600px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  top: 50%;
+  left: 100px;
 }
 
 /* ====================================
